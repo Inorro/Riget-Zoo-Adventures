@@ -1,0 +1,54 @@
+<!DOCTYPE html> <!-- The meta data of the html page declares the file type of the document-->
+{% load static %}
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Tickets</title>
+    <link rel="stylesheet" href="{% static '../static/staticfiles/styles.css' %}"></link>
+</head>
+
+<body>
+    <nav class = "navbar">
+    <ul>
+        <li>
+            <img src="{% static '../static/staticfiles/Logo.png'%}">
+        </li>
+        <li>
+            <a href="{% url 'index'%}">Home</a>
+        </li>
+        <li>
+            <a href="{% url 'About'%}">About</a>
+        </li>
+        <li>
+            <a href="{% url 'Loyalty'%}">Loyalty</a>
+        </li>
+        <li>
+            <a href="{% url 'Hotel'%}">Hotel</a>
+        </li>
+        <li>
+            <a href="{% url 'Tickets'%}">Tickets</a>
+        </li>
+    </ul>
+    </nav>
+    <div class="mainbody">
+    {% if messages %}<script>alert("{% for message in messages %}{{ message }}\n{% endfor %}");</script>{% endif %}
+    <div class="sysformat">
+        <div id="thdesc">
+            <h2>Description</h2>
+            <p> Heres where you plan your visit to RZA and let your imagination run wild as you experiance our awesome wild lif experiance, to learn more about the amenities and contents of our zoo check out the about section at the top of the page
+            <br><br>
+            Tickets are valid for within 30 days of date of purchase. Online tickets are non-refundable.<br><br>
+            <img src="{% static '../static/staticfiles/animals/otter.jpg' %}">
+            </p>
+        </div>
+        <embed src="{% url 'Ticketpt1'%}" scrolling="no">
+            
+        </div>
+    </div>
+    <div class="footer">
+    </div>
+    </div>
+</body>
+<script src="{% static '../static/staticfiles/scripts.js' %}"></script>
+</html>

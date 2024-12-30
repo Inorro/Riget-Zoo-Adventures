@@ -1,0 +1,58 @@
+<!DOCTYPE html> <!-- The meta data of the html page declares the file type of the document-->
+{% load static %}
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Hotels</title>
+    <link rel="stylesheet" href="{% static '../static/staticfiles/styles.css' %}"></link>
+</head>
+
+<body>
+    <nav class = "navbar">
+    <ul>
+        <li>
+            <img src="{% static '../static/staticfiles/Logo.png'%}">
+        </li>
+        <li>
+            <a href="{% url 'index'%}">Home</a>
+        </li>
+        <li>
+            <a href="{% url 'About'%}">About</a>
+        </li>
+        <li>
+            <a href="{% url 'Loyalty'%}">Loyalty</a>
+        </li>
+        <li>
+            <a href="{% url 'Hotel'%}">Hotel</a>
+        </li>
+        <li>
+            <a href="{% url 'Tickets'%}">Tickets</a>
+        </li>
+    </ul>
+    </nav>
+    <div class="mainbody" >
+    <form action="" method="POST">{% csrf_token %}
+    <div class="sysformat">
+        <div id="thdesc">
+            <h2>Description</h2>
+            <p> Welcome to our hotel booking page and come book your stay!
+                At Riget Zoo Adventures we have four room types:
+                <ul>
+                    <li>Our Standard room with 1 to 3 beds and standard amenities<br><strong>For £68.99 per night</strong></li><br>
+                    <li>Our Deluxe room provided with free breakfasts before 9 A.M<br><strong>For £95.99 per night</strong></li><br>
+                    <li>Our Joint rooms which are two rooms that share a common wall but no connecting door ideal for families with younger kids<br><strong>For £74.99 per night</strong></li><br>
+                    <li>Our Suites: a set of rooms designated for one person's or a family's use<br><strong>For £88.99 per night</strong></li><br>
+                </ul>
+                <img src="{% static '../static/staticfiles/hotel.jpg' %}">
+            </p>
+        </div>
+        <embed src="{% url 'Hotelpt1'%}" scrolling="no">
+    </div>
+    
+</div>
+<div class="footer">
+</div>
+</body>
+<script src="{% static '../static/staticfiles/scripts.js' %}"></script>
+</html>

@@ -1,0 +1,564 @@
+
+/* Set global styling*/
+html *{
+    font-size: 16px;
+}
+
+#h1ind{
+    font-size: 3.5rem !important;
+}
+
+h1{
+    font-size: 1.5rem;
+}
+
+h2{
+    font-size: 1rem;
+}
+
+p{
+    font-size: 1rem;
+}
+
+li{
+    font-size: 1rem;
+}
+
+strong{
+    font-size: 1rem;
+}
+
+input{
+    font-size: 1rem;
+}
+
+select{
+    font-size: 1rem;
+}
+
+label{
+    font-size: 1rem;
+}
+
+button{
+    font-size: 1rem;
+}
+
+body {
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    padding: none;
+    margin: 0;
+    position: relative;
+    max-width: 100%;
+    min-height: 100vh;
+    background-color: #f4f3ee;
+    font-size: 1rem;
+}
+
+body::after {
+    content: '';
+    display: block;
+    height: 100px; /* Set same as footer's height */
+}  
+
+.mainbody{
+    margin: 15px;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background: transparent;
+    bottom: 0;
+    color: transparent;
+    cursor: pointer;
+    height: auto;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
+}
+
+input[type="date"]:required:invalid::-webkit-datetime-edit {
+    color: transparent;
+}
+
+input[type=date]:focus::-webkit-datetime-edit {
+    color: black !important;
+}
+
+/* Home Page Styling */
+
+#mainbodyhome{
+    margin:100px;
+    font-size: 1.875rem;
+    color: #ffffff;
+    flex: 1;
+}
+
+#bg{
+    background-image: url('/static/staticfiles/background.jpg');
+    background-size: 100% 120%;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-attachment: fixed;
+    backdrop-filter: none;
+}
+
+.access{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.access h1{
+    margin-right: 30px;
+}
+
+/* Styling for the navigation bar*/
+
+.navbar{
+    overflow: hidden;
+    width: 100%;
+    font-weight: bold;
+    background-color: white;
+    box-shadow: 0px 5px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.navbar ul{
+    background-image: linear-gradient(to right, #92e6a7, #ffffff);
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.navbar a{
+    color: #fb6107;
+    text-decoration: none;
+    padding: 45px;
+    display: block;
+    text-align: center;
+    font-size: 1.25rem !important
+}
+
+.navbar a:hover{
+    color: black;
+    transition: 0.3s;
+}
+
+.navbar img{
+    max-height: inherit;
+    width: 100%;
+}
+
+.navbar li{
+    float: left;
+    max-height:120px;
+}
+
+.signinbtns{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    right: 15px;
+    column-gap: 10px;
+    top: 30px;
+}
+
+.signinbtns button{
+    border-radius: 50%;
+    height: 48px;
+    width: 48px;
+    padding: 5px;
+}
+
+.signinbtns button img{
+    height: 30px;
+    width: 30px;
+    margin: 0;
+}
+
+/* Styling for the footer*/
+
+.footer {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    left:0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    height:100px;
+}
+
+.footer p{
+    font-size: 0.625rem;
+}
+
+.ftrbtn{
+    display: block;
+    max-height:40px;
+    max-width:40px;
+    border-radius: 50%;
+    padding: 0px;
+    margin: 0px;
+}
+
+.ftrbtn img{
+    margin: -1px;
+    max-height:40px;
+    max-width:40px;
+}
+
+/* General System Headings */
+.systemheads{
+    background-color: #a7e6b7;
+    color: white;
+    border: 1px solid black;
+    text-align: center;
+    width: auto;
+    padding: 10px;
+}
+
+/* Styling for the ticket page*/
+.sysformat{
+    display: flex;
+    flex-direction: row;
+    width:100%
+}
+
+.sysformat embed{
+    width: 900px;
+    min-height:100vh;
+    margin-top: -15px;
+    padding-left: 2vw;
+}
+  /* Styling for the loyalty page*/
+#loycard{
+    width: 80vw;
+    padding-left: 1vw;
+}
+#loycard img{
+    width: 70vw;
+    height: auto;
+    padding-left: 1vw;
+}
+
+#ticketsys{
+    flex-grow: 1;
+    max-width: 900px;
+}
+
+.ticketbody{
+    display: flex;
+    flex-direction: row;
+    max-width: 720px;
+    position: relative;
+}
+
+.ticketnames{
+    padding: 0;
+    margin:0;
+}
+
+.ticketnames h4{
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+.ticketnames p{
+    font-size: 1rem;
+    margin: 0;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-family:'Times New Roman', Times, serif;
+}
+
+.ticketnames span{
+    font-size: 0.625rem;
+}
+
+.ticketcheck{
+    position: absolute;
+    margin-left: 2rem;
+    display: inline;
+    right: 0;
+}
+
+.ticketcheck input[type=checkbox]{
+    transform-origin: top left;
+    transform: scale(2);
+    margin-right: 1.5rem !important;
+}
+
+.ticketcheck select{
+    transform-origin: top left;
+    transform: scale(1.5);
+    display: inline-block;
+    font-size: 0.8rem !important;
+    width: 40px;
+}
+
+.selectlist{
+    transform-origin: top left;
+    display: inline-block;
+    width: 40px;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+#thdesc{
+    width: 40vw;
+}
+
+#thdesc img{
+    max-width: 35vw;
+    border: solid black 1px;
+}
+
+#tdate{
+    padding-bottom: 15px;
+    display: flex;
+    width: 100px;
+}
+
+#tdatesect{
+    padding-right: 3.5rem;
+    padding-left: 0px;
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+}
+
+#tdate label{
+    padding-bottom: 10px;
+    transform-origin: left top;
+    transform: scale(1.1);
+}
+
+#tdate input{
+    transform-origin: left top;
+    transform: scale(1.1);
+    width: 6rem;
+}
+
+/* Styling for the hotel page*/
+
+#hsys{
+    flex-grow: 1;
+    max-width: 700px;
+}
+
+.hotelsect{
+    display: flex;
+    flex-direction: column;
+}
+
+.hotelsect label{
+    margin-bottom: 15px;
+    transform-origin: left top;
+    transform: scale(1.5);
+    /* font-size: 1rem !important; */
+}
+
+.hotelsect input,select{
+    width: 200px;
+    margin-bottom: 5px;
+    transform-origin: left top;
+    transform: scale(1.5);
+    /* font-size: 1rem !important; */
+}
+
+.hotelbdy{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+}
+
+/* Styling for the about page*/
+.tabcenter{
+    display: flex;
+    justify-content: center;
+}
+
+.tabcont {
+    display: none;
+    border: 1px solid #55cc7c;
+    border-top: none;
+    width: 65rem;
+    padding: 1px 0px;
+}
+
+.tabcont h1{
+    padding: 15px 12px;
+    margin:-1px 0px;
+}
+
+.tabcont p{
+    padding: 15px 12px;
+    margin:-1px 0px;
+}
+
+.tablinks{
+    background-color: inherit;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 1rem;
+    box-shadow: 5px 5px;
+}
+
+.tablinks:hover {
+    background-color: #55cc7c;
+}
+
+.tablinks.active {
+    background-color: #55cc7c;
+}
+
+.tab{
+    overflow: hidden;
+    border: 1px solid #55cc7c;
+    background-color: #a7e6b7;
+    max-width: 70rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 299.2px;
+    padding: 10px;
+}
+
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+  }
+  
+.active, .accordion:hover {
+    background-color: #ccc;
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.panel a.btn{
+    border-radius: 2em;
+    display: inline-block;
+    padding: .5em 1em;
+    text-decoration: none;
+    background-color: #444;
+    color: white;
+    cursor:default;
+}
+
+.panel a.btn:hover{
+    background-color: black;
+}
+
+.animal{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: none;
+    padding: 10px;
+}
+
+.animal img{
+    max-width: 35rem;
+    max-height: 30rem;
+}
+
+.anidesc{
+    padding: 1rem;
+    max-width: 60rem;
+}
+
+/* General styling*/
+.modal{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    padding-top: 10px;
+    width: 18.75rem;
+    position: absolute;
+    margin-top: 10px;
+    top: -200%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    transition: top 0.5s ease-in-out;
+    border: 1px solid black;
+    background-color: white;
+    z-index: 3;
+    box-shadow: 2px 2px;
+    color: black;
+    font-size: 1.25rem;
+}
+
+.modal.active{
+    top: 0%;
+}
+
+#overlay{
+    display: none;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.2);
+    z-index: 2;
+}
+
+#overlay.active{
+    display: block;
+}
+
+.labels{
+    display: block;
+    padding-top: 10px;
+    font-size: 1.25rem;
+}
+
+.blkbtn{
+    margin-bottom: 10px;
+    border-radius: 2em;
+    display: inline-block;
+    padding: .5em 1em;
+    text-decoration: none;
+    background-color: #444;
+    color: white;
+    cursor:default;
+}
+
+.blkbtn:hover{
+    background-color: black;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '../static/staticfiles/styles.css' %}"></link>
+    <title>Document</title>
+</head>
+<body style="overflow: hidden;">
+    {% if messages %}<script>alert("{% for message in messages %}{{ message }}\n{% endfor %}");</script>{% endif %}
+    <div class="hotelbdy">
+        <h1 class="systemheads">Hotels</h1>
+        <form action="" method="POST">{% csrf_token %}
+        <div class="hotelsect">
+            <label for="suite">Suites</label>
+            <select name="suite" id="suites">
+                <option value="suite1">Standard</option>
+                <option value="suite2">Deluxe</option>
+                <option value="suite3">Joint</option>
+                <option value="suite4">Suite</option>
+            </select>
+        </div>
+        <hr>
+        <div class="hotelsect">
+            <label for="checkin">Check in</label>
+            <input type="date" id="checkin" name="checkin" onkeydown="return false" required>
+        </div>
+        <hr>
+        <div class="hotelsect">
+            <label for="checkout">Check Out</label>
+            <input type="date" id="checkout" name="checkout" onkeydown="return false" required>
+        </div>
+        <hr>
+        <div class="hotelsect">
+            <label for="people">Number of people</label>
+            <select name="people" id="people">
+                <option value="p1">1 Person</option>
+                <option value="p2">2 People</option>
+                <option value="p3">3 People</option>
+                <option value="p4">4 People</option>
+            </select>
+        </div>
+        <hr>
+        <div class="hotelsect">
+            <label for="room">Rooms</label>
+            <select name="rooms" id="room">
+                <option value="1">1 room</option>
+                <option value="2">2 rooms</option>
+                <option value="3">3 rooms</option>
+                <option value="4">4 rooms</option>
+            </select>
+        </div>
+        <hr>
+        {% if not user.is_authenticated %}
+        <div class="hotelsect" style="padding-top: 15px;">
+            <label for="email1">Enter Your Email Address:</label>
+            <input id="email1" name="email1" type="email" required pattern="[^@\s]+@[^@\s]+\.[^@\s]+">
+        </div>
+        <hr>
+        {% endif %}
+        <div class="hotelsect" style="padding-top: 10px;">
+            <input type="submit" name="hotel" value="Submit" style="width: min-content;">
+        </form>
+    </div>
+</body>
+<script src="{% static '../static/staticfiles/scripts.js' %}"></script>
+</html>

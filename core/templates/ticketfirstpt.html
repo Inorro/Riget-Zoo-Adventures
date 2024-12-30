@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '../static/staticfiles/styles.css' %}"></link>
+    
+    <title>Ticketpt1</title>
+</head>
+<body style="overflow: hidden;">
+    <div id = "ticketsys">
+    {% if messages %}<script>alert("{% for message in messages %}{{ message }}\n{% endfor %}");</script>{% endif %}
+    <form action="" method="POST" onsubmit="valthis();">{% csrf_token %}
+        <h1 class = systemheads>Tickets</h1>
+        <div>
+            <div class="ticketbody">
+                <div class="ticketnames">
+                    <h4>Children (2 to 15 years)</h4>
+                    <p>Children under 16 must be accompanied by an adult.</p>
+                    <span>£11.99</span>
+                </div>
+                <div class="ticketcheck">
+                    <input type="checkbox" id="check1" name="tickets[]" value="True" onclick="checking()">
+                    <div class="selectlist">
+                        <select name="number1" id="num1" class="num1">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div>
+            <div class="ticketbody">
+            <div class="ticketnames">
+                <h4>Standard</h4>
+                <p>Adults over 16</p>
+                <span>£14.99</span>
+            </div>
+            <div class="ticketcheck">
+            <input type="checkbox" id="check2" name="tickets[]" value="True" onclick="checking()">
+            <select name="number2" id="num2">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+            </div>
+            </div>
+        </div>
+        <hr>
+        <div>
+            <div class="ticketbody">
+            <div class="ticketnames">
+                <h4>Off Peak Weekday</h4>
+                <p>Adults over 16 during the Weekday</p>
+                <span>£10.99</span>
+            </div>
+            <div class="ticketcheck">
+            <input type="checkbox" id="check3" name="tickets[]" value="True" onclick="checking()">
+            <select name="number3" id="num3">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+            </div>
+            </div>
+        </div>
+        <hr>
+        <div>
+            <div class="ticketbody">
+            <div class="ticketnames">
+                <h4>Seniors</h4>
+                <p>Over 60 years old</p>
+                <span>£12.99</span>
+            </div>
+            <div class="ticketcheck">
+            <input type="checkbox" id="check4" name="tickets[]" value="True" onclick="checking()">
+            <select name="number4" id="num4">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+            </div>
+            </div>
+        </div>
+        <hr>
+        <div id="tdate">
+            <div id="tdatesect">
+            <label for="tickdate">Date</label>
+                <input id="tickdate" name="tickdate" type="date" onkeydown="return false" required>
+            </div>
+            {% if not user.is_authenticated %}
+            <div id="tdatesect">
+            <label for="tickemail">Email</label>
+                <input id="tickemail" name="tickemail" type="email" required pattern="[^@\s]+@[^@\s]+\.[^@\s]+">
+            </div>
+            {% endif %}
+        </div>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+<script src="{% static '../static/staticfiles/scripts.js' %}"></script>
+</html>

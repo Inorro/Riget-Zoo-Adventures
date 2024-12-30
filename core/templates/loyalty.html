@@ -1,0 +1,64 @@
+<!DOCTYPE html> <!-- The meta data of the html page declares the file type of the document-->
+{% load static %}
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Loyalty</title>
+    <link rel="stylesheet" href="{% static '../static/staticfiles/styles.css' %}"></link>
+</head>
+
+<body>
+    <nav class = "navbar">
+    <ul>
+        <li>
+            <img src="{% static '../static/staticfiles/Logo.png'%}">
+        </li>
+        <li>
+            <a href="{% url 'index'%}">Home</a>
+        </li>
+        <li>
+            <a href="{% url 'About'%}">About</a>
+        </li>
+        <li>
+            <a href="{% url 'Loyalty'%}">Loyalty</a>
+        </li>
+        <li>
+            <a href="{% url 'Hotel'%}">Hotel</a>
+        </li>
+        <li>
+            <a href="{% url 'Tickets'%}">Tickets</a>
+        </li>
+    </ul>
+    </nav>
+    <div class="mainbody">
+    <h1 class="systemheads">Your Rewards</h1>
+        <div class="sysformat">
+            
+            <div id="thdesc">
+                {% if user.is_authenticated %}
+                <h2>You Have {{request.user.points}} Points</h2>
+                {% endif %}
+                <p>
+                    Welcome to our Loyalty/Rewards Page here you will see the available points collected from your online booking and the possible rewards up for grabs
+
+                    How do you get points?
+                    <ul>
+                        <li>For every ticket purchased online you get 100 points</li>
+                        <li>And for every hotel booking done online you get 200 points</li>
+                        <li>Points are only available to users who have made an account</li>
+                    </ul>
+                    <p>These can be redeemed on site at the reception by the main enterance<p>
+                </p>
+            </div>
+                <a id="loycard" href="/static/staticfiles/rewards card.png" download>
+                    <img src="{% static '../static/staticfiles/rewards card.png'%}" alt="Click to download">
+                </a>
+        </div>
+        <p>Click card to download</p>
+    </div>
+    <div class="footer">
+    </div>
+</body>
+<script src="{% static '../static/staticfiles/scripts.js' %}"></script>
+</html>

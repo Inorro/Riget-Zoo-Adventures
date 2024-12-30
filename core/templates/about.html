@@ -1,0 +1,163 @@
+<!DOCTYPE html> <!-- The meta data of the html page declares the file type of the document-->
+{% load static %}
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>About us</title>
+    <link rel="stylesheet" href="{% static '../static/staticfiles/styles.css' %}"></link>
+</head>
+
+<body>
+    <nav class = "navbar">
+    <ul>
+        <li>
+            <img src="{% static '../static/staticfiles/Logo.png'%}">
+        </li>
+        <li>
+            <a href="{% url 'index'%}">Home</a>
+        </li>
+        <li>
+            <a href="{% url 'About'%}">About</a>
+        </li>
+        <li>
+            <a href="{% url 'Loyalty'%}">Loyalty</a>
+        </li>
+        <li>
+            <a href="{% url 'Hotel'%}">Hotel</a>
+        </li>
+        <li>
+            <a href="{% url 'Tickets'%}">Tickets</a>
+        </li>
+    </ul>
+    </nav>
+    <div class="mainbody">
+    <h1 class="systemheads">About Us</h1>
+    <div class="tabcenter">
+        <div class="tab">
+            <button class="tablinks active" onclick="openTab(event, 'animals')">Our Animals</button>
+            <button class="tablinks" onclick="openTab(event, 'education')">Educational Materials</button>
+            <button class="tablinks" onclick="openTab(event, 'facilities')">Our Facilities</button>
+        </div>
+    </div>
+    <div class="tabcenter">
+        <div id="animals" class="tabcont" style="display: block;">
+            <h1 style="background-color: #8DFFCD;">Our Animals</h1>
+            <div class="animal" style="background-color: #8DFFCD;">
+                <img src="{% static '../static/staticfiles/animals/otter.jpg' %}">
+                <div class="anidesc">
+                    <h1>Asian Small-Clawed Otter</h1>
+                    <p>The Asian small-clawed otter, also known as the oriental small-clawed otter and the small-clawed otter, is an otter species native to South and Southeast Asia.<br><br>
+                    These otters have dark brown fur above and lighter fur below, often with gray, white, or cream-colored markings on the face and throat. They have webbed feet, and true to their name, their claws do not extend beyond their digital pads.<br><br>
+                    In the wild the otters eat primarily crustaceans and mollusks but will also eat fish, insects, amphibians and reptiles. Asian small-clawed otters use their forepaws rather than their mouth to locate and capture food items.
+                    </p>
+                </div>
+            </div>
+            <div class="animal" style="background-color: #F2DC5D;">
+                <img src="{% static '../static/staticfiles/animals/Red panda.jpg' %}">
+                <div class="anidesc">
+                    <h1>Red panda</h1>
+                    <p>The red panda, also known as the lesser panda, is a small mammal native to the eastern Himalayas and southwestern China. It has dense reddish-brown fur with a black belly and legs, white-lined ears, a mostly white muzzle and a ringed tail.<br><br>
+                    They have large, round heads and short snouts with big, pointed ears. Their faces are white with reddish-brown “tear” marks that extend from the eyes to the corner of the mouth. These markings could have evolved to help keep the sun out of their eyes. Their tails are marked with alternating red and buff rings.<br><br>
+                    In contrast with other carnivores their size, red pandas have extremely robust dentition. They also have a simple carnivore stomach, despite their predominantly leaf-based diet. Red pandas share the giant panda’s pseudo-thumb, a modified wrist bone used to grasp bamboo when feeding.
+                    </p>
+                </div>
+            </div>
+            <div class="animal" style="background-color:#BEE6CE;">
+                <img src="{% static '../static/staticfiles/animals/goat.jpg' %}">
+                <div class="anidesc">
+                    <h1>African Pygmy Goat</h1>
+                    <p>The West African Pygmy is a miniature dairy goat with milk production being quite generous for their small size.
+                        <br><br>
+                    This goat is one of the few breeds of goat that will breed out of season. Therefore, they will often produce more than one kid crop per year. Although domestic goats in general originated in Asia, the African Pygmy is one of four types of dwarf goats from Africa. And African pygmy bucks have scent glands on their body that produce a strong odor.
+                    <br><br>
+                    They eat mostly greens, grains, shrubs, plants, hay, and need fresh water.
+                    </p>
+                </div>
+            </div>
+            <div class="animal" style="background-color: #edf2f4;">
+                <img src="{% static '../static/staticfiles/animals/owl.jpg' %}">
+                <div class="anidesc">
+                    <h1>Snowy Owl</h1>
+                    <p>
+                    Snowy Owls are very large owls with smoothly rounded heads that rarely show ear tufts. The body is bulky, with dense feathering on the legs that makes the bird look wide at the base when sitting on the ground.
+                    <br><br>
+                    These large owls mainly live in the Arctic in open, treeless areas called tundra. Snowy owls perch on the ground or on short posts. From there they patiently watch for prey. Their favorite target is lemmings—small mouselike rodents—but they also hunt for other small rodents, rabbits, birds, and fish.
+                    <br><br>
+                    The Snowy Owl hunts by quartering over open land, searching for small mammals, insects and birds. It will sometimes take birds in the air, but the bulk of its prey is caught on the ground.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tabcenter">
+        <div id="education" class="tabcont">
+            <h1>Educational Materials</h1>
+            <button class="accordion">Worksheet 1</button>
+            <div class="panel">
+            <a href="/static/staticfiles/worksheets/Who-Am-EYE-Worksheet-Grades-K-1.pdf" target="blank">Who-Am-EYE-Worksheet-Grades-K-1</a>
+            <a href="/static/staticfiles/worksheets/Who-Am-EYE-Worksheet-Grades-K-1.pdf" download class="blkbtn">Download</a><br><br>
+            <a href="/static/staticfiles/worksheets/Who-Am-EYE-Answer-Key-Grades-K-1.pdf"target="blank">Who-Am-EYE-Answer-Key-Grades-K-1</a>
+            <a href="/static/staticfiles/worksheets/Who-Am-EYE-Answer-Key-Grades-K-1.pdf" download class="blkbtn">Download</a><br><br>
+            </div>
+            <button class="accordion">Worksheet 2</button>
+            <div class="panel">
+            <a href="/static/staticfiles/worksheets/Who-Am-EYE-Worksheet-Grades-2-5.pdf" target="blank">Who-Am-EYE-Worksheet-Grades-2-5</a>
+            <a href="/static/staticfiles/worksheets/Who-Am-EYE-Worksheet-Grades-2-5.pdf" download class="blkbtn">Download</a><br><br>
+            <a href="/static/staticfiles/worksheets/Who-Am-EYE-Answer-Key-Grades-2-5.pdf"target="blank">Who-Am-EYE-Answer-Key-Grades-2-5</a>
+            <a href="/static/staticfiles/worksheets/Who-Am-EYE-Answer-Key-Grades-2-5.pdf" download class="blkbtn">Download</a><br><br>
+            </div>
+            <button class="accordion">Worksheet 3</button>
+            <div class="panel">
+                <a href="/static/staticfiles/worksheets/Who-Am-EYE-Worksheet-Grades-6-8.pdf" target="blank">Who-Am-EYE-Worksheet-Grades-6-8</a>
+                <a href="/static/staticfiles/worksheets/Who-Am-EYE-Worksheet-Grades-6-8.pdf" download class="blkbtn">Download</a><br><br>
+                <a href="/static/staticfiles/worksheets/Who-Am-EYE-Answer-Key-Grades-6-8.pdf"target="blank">Who-Am-EYE-Answer-Key-Grades-6-8</a>
+                <a href="/static/staticfiles/worksheets/Who-Am-EYE-Answer-Key-Grades-6-8.pdf" download class="btn">Download</a><br><br>
+            </div>
+        </div>
+    </div>
+
+    <div class="tabcenter">
+        <div id="facilities" class="tabcont">
+            <h1>Our Hotel</h1>
+            <p>
+                At Riget Zoo Adventures we provide an onsite hotel for visitors, Our hotel contains a multitude of room types and choices such as
+            </p>
+            <ul>
+                <li>Our Standard room with 1 to 3 beds and standard amenities<br><strong>For £68.99 per night</strong></li><br>
+                <li>Our Deluxe room provided with free breakfasts before 9 A.M<br><strong>For £95.99 per night</strong></li><br>
+                <li>Our Joint rooms which are two rooms that share a common wall but no connecting door ideal for families with younger kids<br><strong>For £74.99 per night</strong></li><br>
+                <li>Our Suites: a set of rooms designated for one person's or a family's use<br><strong>For £88.99 per night</strong></li><br>
+            </ul>
+            <p>
+                Rooms can be booked either on site or at our hotel booking page found <a href="{% url 'Hotel'%}">here</a>
+                After every booking while signed in user will get 200 loyalty points that will can be seen on our loyalty page and redeemed on site
+            </p>
+            <h1>Our Zoo</h1>
+            <p>
+                At Riget Zoo Adventures we not only have a large collection of animals to visit but a variety of habitats as well including
+            </p>
+            <ul>
+                <li>
+                    <strong>Our Bird Safari</strong><br>
+                    Discover a variety of stunning and breathtaking birds such as our snowy owl and much more
+                    <br><br>
+                </li>
+                <li>
+                    <strong>Our Lemur Exhibit</strong><br>
+                    Visit our ring tailed lemurs at the Lemur Exhibit
+                    <br><br>
+                </li>
+                <li>
+                    <strong>Our Pygmy Goat Petting Experiance</strong><br>
+                    Get up close and personal with our Pygmy goats and learn how to pet,feed and care for a pygmy goat from our licensed professionals
+                </li>
+            </ul>
+        </div>
+    </div>
+    </div>
+    
+</body>
+<script src="{% static '../static/staticfiles/scripts.js' %}"></script>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html> <!-- The meta data of the html page declares the file type of the document-->
+{% load static %}
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Riget Zoo Adventures</title>
+    <link rel="stylesheet" href="{% static '../static/staticfiles/styles.css' %}"></link>
+</head>
+
+<body id="bg">
+
+    <nav class="navbar">
+    <ul>
+        <li>
+            <img src="{% static '../static/staticfiles/Logo.png'%}">
+        </li>
+        <li>
+            <a href="{% url 'index'%}">Home</a>
+        </li>
+        <li>
+            <a href="{% url 'About'%}">About</a>
+        </li>
+        <li>
+            <a href="{% url 'Loyalty'%}">Loyalty</a>
+        </li>
+        <li>
+            <a href="{% url 'Hotel'%}">Hotel</a>
+        </li>
+        <li>
+            <a href="{% url 'Tickets'%}">Tickets</a>
+        </li>
+        <li class="signinbtns">
+            <button type="button" class="blkbtn" data-target="#modal1"><img src="{% static '../static/staticfiles/account.png'%}" alt=""></button>
+            <button type="button" class="blkbtn" data-target="#modal2"><img src="{% static '../static/staticfiles/add-user.png'%}" alt=""></button>
+        </li>
+    </ul>
+    </nav>
+    {% if messages %}<script>alert("{% for message in messages %}{{ message }}\n{% endfor %}");</script>{% endif %}
+    <div id = "mainbodyhome";>
+    <h1 id = "h1ind">Welcome to <br>Riget Zoo <br>Adventures</h1>
+    {% if user.is_authenticated %}
+    <h1>Hello {{request.user.name}}</h1>
+    <a href="{% url 'SignOut'%}">
+    <button type="button" class="blkbtn" data-target="">Log Out</button>
+    </a>
+    {% else %}
+    <div style="display: flex;align-items: top;column-gap: 20px;">
+    <button type="button" class="blkbtn" data-target="#modal1">Log in</button>
+    <button type="button" class="blkbtn" data-target="#modal2">Create an Account Here</button>
+    </div>
+    {% endif %}
+
+    <div class="modal" id="modal2">
+        <h2 class = systemheads>Sign Up</h2>
+        <form action="" method="POST">{% csrf_token %}
+            {% for field in Uform %}
+            <label class="labels" for="{{ field.auto_id }}">{{ field.label }}</label>
+            {{ field }}
+            {% endfor %}
+            <br><br>
+            <input type="submit" name="Sign_UP" value="Submit">
+        </form>
+    </div>
+
+    <div class="modal" id="modal1">
+        <h2 class = systemheads>Log In</h2>
+        <form action="" method="POST">{% csrf_token %}
+            {% for field in Lform %}
+            <label class="labels" for="{{ field.auto_id }}">{{ field.label }}</label>
+            {{ field }}
+            {% endfor %}
+            <br><br>
+            <input type="submit" name="Log_IN" value="Submit">
+        </form>
+        <br>
+        <a href="{% url 'password_reset' %}">Forgot Password?</a>
+    </div>
+
+    <div class="modal" id="modal3">
+        <h2 class = systemheads>Accessibility</h2>
+        <div class="access">
+        <h1>Change Font Size</h1>
+        <div>
+        <button type="button" onclick="largefont()" class="blkbtn">Large Font</button><br>
+        <button type="button" onclick="medfont()" class="blkbtn">Medium Font</button><br>
+        <button type="button" onclick="smallfont()" class="blkbtn">Small Font</button>
+        </div>
+        </div>
+        <hr>
+        <div class="access">
+        <h1>Change Colour Filter</h1>
+        <div>
+        <button type="button" onclick="original()" class="blkbtn">Original</button><br>
+        <button type="button" onclick="greyscale()" class="blkbtn">Greyscale</button><br>
+        <button type="button" onclick="blue()" class="blkbtn">Blue Filter</button>
+        </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Change Accessibility Here</p>
+        <button type="button" class="ftrbtn" data-target="#modal3">
+            <img src="{% static '../static/staticfiles/accessibility.png'%}">
+        </button>
+    </div>
+    </div>
+    <div id = "overlay"></div>
+</body>
+
+<script src="{% static '../static/staticfiles/scripts.js' %}"></script>
+</html>
